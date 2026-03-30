@@ -13,6 +13,7 @@ namespace Core.Input
         public event UnityAction RightEvent;
         public event UnityAction DownEvent;
         public event UnityAction UpEvent;
+        public Vector2 MousePosition { get;private set; }
 
         private PlayerAction playerInputAction;
 
@@ -67,6 +68,11 @@ namespace Core.Input
             {
                 throw new System.NotImplementedException();
             }
+        }
+
+        public void OnMouse(InputAction.CallbackContext context)
+        {
+            MousePosition = context.ReadValue<Vector2>();
         }
     }
 }

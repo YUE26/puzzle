@@ -226,6 +226,18 @@ namespace Core.UI
 
     public void DestroyUI() { DoDestroy(); }
 
+    public PanelName GetTopUI()
+    {
+        if (UIStack == null || UIStack.Count == 0)
+        {
+            Debug.LogWarning("UIStack is empty, cannot close UI!");
+            return PanelName.Null;
+        }
+
+        var ui = UIStack.Pop();
+        return ui.panelName;
+    }
+
 #endregion
 
 

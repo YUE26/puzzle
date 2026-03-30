@@ -48,23 +48,30 @@
     <Analyzer Include="/home/russell/Unity/Hub/Editor/6000.0.67f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Core/UI/UIModule.cs" />
+    <Compile Include="Assets/Scripts/Core/Event/EventName.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/CanvasControl.cs" />
+    <Compile Include="Assets/Scripts/Core/Cursor/SmartCursor.cs" />
+    <Compile Include="Assets/Scripts/Core/Input/PlayerAction.cs" />
+    <Compile Include="Assets/Scripts/Core/Interfaces/ICore.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/PanelPath.cs" />
+    <Compile Include="Assets/Scripts/Core/Interfaces/IEvent.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/UIBase.cs" />
+    <Compile Include="Assets/Scripts/Core/Cursor/SmartCursorConfig.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
-    <Compile Include="Assets\Scripts\Core\Bag\Data\ItemData.cs" />
-    <Compile Include="Assets\Scripts\Core\Bag\Utils.cs" />
-    <Compile Include="Assets\Scripts\Core\Event\EventData.cs" />
-    <Compile Include="Assets\Scripts\Core\Event\EventModule.cs" />
-    <Compile Include="Assets\Scripts\Core\Event\EventName.cs" />
-    <Compile Include="Assets\Scripts\Core\Event\EventSender.cs" />
-    <Compile Include="Assets\Scripts\Core\Input\InputReader.cs" />
-    <Compile Include="Assets\Scripts\Core\Input\PlayerAction.cs" />
-    <Compile Include="Assets\Scripts\Core\Interfaces\ICore.cs" />
-    <Compile Include="Assets\Scripts\Core\Interfaces\IEvent.cs" />
-    <Compile Include="Assets\Scripts\Core\Interfaces\IInput.cs" />
-    <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
-    <Compile Include="Assets\Scripts\Core\UI\CanvasControl.cs" />
-    <Compile Include="Assets\Scripts\Core\UI\PanelPath.cs" />
-    <Compile Include="Assets\Scripts\Core\UI\UIBase.cs" />
-    <Compile Include="Assets\Scripts\Core\UI\UIModule.cs" />
+    <Compile Include="Assets/Scripts/Core/Input/InputReader.cs" />
+    <Compile Include="Assets/Scripts/Core/Logger/GameLogger.cs" />
+    <Compile Include="Assets/Scripts/Core/Event/EventData.cs" />
+    <Compile Include="Assets/Scripts/Core/SingletonMono.cs" />
+    <Compile Include="Assets/Scripts/Core/Bag/Data/ItemData.cs" />
+    <Compile Include="Assets/Scripts/Core/Bag/Utils.cs" />
+    <Compile Include="Assets/Scripts/Core/Input/InputModule.cs" />
+    <Compile Include="Assets/Scripts/Core/Interfaces/IInput.cs" />
+    <Compile Include="Assets/Scripts/Core/Singleton.cs" />
+    <Compile Include="Assets/Scripts/Core/Event/EventModule.cs" />
+    <Compile Include="Assets/Scripts/Core/CameraControl.cs" />
+    <Compile Include="Assets/Scripts/Core/Event/EventSender.cs" />
+    <Compile Include="Assets/Scripts/Core/ResourceManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1247,6 +1254,8 @@
       <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
