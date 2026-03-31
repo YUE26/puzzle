@@ -9,6 +9,9 @@ using UnityEngine;
 
 namespace GamePlay.Bag
 {
+    /// <summary>
+    /// 物品背包
+    /// </summary>
     public class ItemManager : SingletonMono<ItemManager>, ISaveable
     {
         public ItemDetail itemInHand { get; private set; } = null;

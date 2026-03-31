@@ -18,14 +18,17 @@ namespace CsvModule
     public class Csv
     {
      private CsvLoader loader = new CsvLoader();
+     public static Dictionary<int, InteractionCfg> InteractionCfgStore;
      public static Dictionary<int, ItemCfg> ItemCfgStore;
      public void Init()
      {
+        InteractionCfgStore = loader.Load<InteractionCfg>(CsvName.InteractionCfg);
         ItemCfgStore = loader.Load<ItemCfg>(CsvName.ItemCfg);
      }
 #if UNITY_EDITOR
      public void InitInEditor()
      {
+        InteractionCfgStore = loader.Load<InteractionCfg>(CsvName.InteractionCfg);
         ItemCfgStore = loader.Load<ItemCfg>(CsvName.ItemCfg);
      }
 #endif

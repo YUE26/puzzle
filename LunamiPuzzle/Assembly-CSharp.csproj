@@ -50,12 +50,13 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Repo/Event/EventName.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Bag/Data/ItemData.cs" />
+    <Compile Include="Assets/Scripts/Repo/#Generated/CSV/InteractionCfg.cs" />
     <Compile Include="Assets/Scripts/Core/UI/UIModule.cs" />
     <Compile Include="Assets/Scripts/GamePlay/UI/PanelPath.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/TransitionData.cs" />
     <Compile Include="Assets/Scripts/Core/Csv/CsvBase.cs" />
-    <Compile Include="Assets/Scripts/GamePlay/MiniGame/IMiniGame.cs" />
     <Compile Include="Assets/Scripts/Core/SaveLoad/ISaveable.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Interfaces/IMiniGame.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/ItemSaveData.cs" />
     <Compile Include="Assets/Scripts/Core/UI/CanvasControl.cs" />
     <Compile Include="Assets/Scripts/Core/Cursor/SmartCursor.cs" />
@@ -68,9 +69,11 @@
     <Compile Include="Assets/Scripts/GamePlay/SaveData/GameManagerData.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Bag/Data/ItemInteract.cs" />
     <Compile Include="Assets/Scripts/Core/Csv/CsvLoader.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/ObjectManager/ObjectManager.cs" />
     <Compile Include="Assets/Scripts/Repo/Event/EventData.cs" />
     <Compile Include="Assets/Scripts/Core/Editors/EditorUtils.cs" />
     <Compile Include="Assets/Scripts/Core/Interfaces/IEvent.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Interfaces/IInteraction.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Bag/ItemManager.cs" />
     <Compile Include="Assets/Scripts/Repo/#Generated/CSV/Csv.cs" />
     <Compile Include="Assets/Scripts/Core/UI/UIBase.cs" />
@@ -94,6 +97,7 @@
     <Compile Include="Assets/Scripts/Core/Singleton.cs" />
     <Compile Include="Assets/Scripts/Core/Event/EventModule.cs" />
     <Compile Include="Assets/Scripts/Core/CameraControl.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Interaction/Interaction.cs" />
     <Compile Include="Assets/Scripts/Core/Event/EventSender.cs" />
     <Compile Include="Assets/Scripts/Core/SaveLoad/SaveLoadManager.cs" />
     <Compile Include="Assets/Scripts/Core/ResourceManager.cs" />

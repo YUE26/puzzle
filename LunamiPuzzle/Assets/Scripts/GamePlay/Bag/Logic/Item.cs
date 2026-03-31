@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using CsvModule;
 using GamePlay.Bag.Data;
+using GamePlay.Interfaces;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace GamePlay.Bag.Logic
 {
-    public class Item : MonoBehaviour, IPointerClickHandler
+    /// <summary>
+    /// 可以放到背包里的
+    /// </summary>
+    public class Item : MonoBehaviour, IInteraction
     {
         public int id;
         public List<ItemInteract> interacts = new List<ItemInteract>();
@@ -20,7 +24,7 @@ namespace GamePlay.Bag.Logic
         {
             if (ItemManager.Instance.itemInHand == null || ItemManager.Instance.itemInHand.itemId == 0)
             {
-                OnItemClick();
+                ItemClick();
             }
             else
             {
@@ -37,6 +41,14 @@ namespace GamePlay.Bag.Logic
                 DoCompositeItem(itemCfg.result);
             }
         }
+        
+        
+        public void ItemClick()
+        {
+            OnInteractClick();
+        }
+
+#region virtual
 
         /// <summary>
         /// click and change
@@ -45,12 +57,15 @@ namespace GamePlay.Bag.Logic
         protected virtual void DoCompositeItem(int id)
         {
         }
-
+        
         /// <summary>
         /// pure click, no state change
         /// </summary>
-        protected virtual void OnItemClick()
+        protected virtual void OnInteractClick()
         {
         }
+
+#endregion
+        
     }
 }

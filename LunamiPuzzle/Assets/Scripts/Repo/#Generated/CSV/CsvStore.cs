@@ -18,6 +18,7 @@ namespace CsvModule
     {
     public static readonly Dictionary<string, string[,]> store = new Dictionary<string, string[,]>()
      {
+             {CsvName.InteractionCfg, InteractionCfg.properties},
              {CsvName.ItemCfg, ItemCfg.properties},
         };
      }

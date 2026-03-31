@@ -1,4 +1,4 @@
-namespace GamePlay.MiniGame
+namespace GamePlay.Interfaces
 {
     public interface IMiniGame
     {

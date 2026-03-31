@@ -16,6 +16,7 @@ namespace CsvModule
     /// </summary>
     public class CsvName
     {
+        public const string InteractionCfg = "InteractionCfg";
         public const string ItemCfg = "ItemCfg";
     }
 }
