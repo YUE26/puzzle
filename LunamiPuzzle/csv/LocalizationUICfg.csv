@@ -1,5 +1,5 @@
 id&int,ch&string,en&string
-Menu_NewGame,,New Game
-Menu_Continue,,
-Menu_Quit,,
-Menu_AboutUs,,
+1010000,新游戏,New Game
+1010001,继续,Continue
+1010002,退出,Quit
+1010003,关于我们,About Us

@@ -16,9 +16,9 @@ public class LocalizationUICfg:CsvBase
     public string en { get; set; }
    public static readonly string[,] properties = 
    {
-       {"Menu_NewGame","0","New Game",},
-       {"Menu_Continue","0","0",},
-       {"Menu_Quit","0","0",},
-       {"Menu_AboutUs","0","0",},
+       {"1010000","新游戏","New Game",},
+       {"1010001","继续","Continue",},
+       {"1010002","退出","Quit",},
+       {"1010003","关于我们","About Us",},
    };
 }

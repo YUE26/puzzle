@@ -16,6 +16,6 @@ public class LocalizationGameplayCfg:CsvBase
     public string en { get; set; }
    public static readonly string[,] properties = 
    {
-       {"Dialog10001","0","0",},
+       {"2010000","xxxx","xxxxx",},
    };
 }

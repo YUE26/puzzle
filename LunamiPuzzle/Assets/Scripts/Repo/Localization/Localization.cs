@@ -1,7 +1,6 @@
 using System;
-using GamePlay;
 
-namespace Core.Localization
+namespace Repo.Localization
 {
     public enum LangState
     {
@@ -12,7 +11,7 @@ namespace Core.Localization
     public static class Localization
     {
         public static Action LanguageUpdate;
-        public static LangState _language;
+        public static LangState _language = LangState.ch;
         
         public static void SwitchToEnglish()
         {
@@ -33,7 +32,7 @@ namespace Core.Localization
         
         public static string Load_Gameplay(int id)
         {
-            if (CsvModule.Csv.LocalizationGameplayCfgStore.TryGetValue(id, out var lc))
+            if (Csv.LocalizationGameplayCfgStore.TryGetValue(id, out var lc))
             {
                 var text = GetLocalizedText(lc);
                 return text;
@@ -43,7 +42,7 @@ namespace Core.Localization
 
         public static string Load_UI(int id)
         {
-            if (CsvModule.Csv.LocalizationUICfgStore.TryGetValue(id, out var lc))
+            if (Csv.LocalizationUICfgStore.TryGetValue(id, out var lc))
             {
                 var text = GetLocalizedText(lc);
                 return text;

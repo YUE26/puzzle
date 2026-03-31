@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Core.Localization;
+using Repo.Localization;
 
 namespace GamePlay.SaveData
 {

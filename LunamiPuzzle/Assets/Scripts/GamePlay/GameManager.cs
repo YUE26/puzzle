@@ -1,13 +1,13 @@
-using System;
 using Core;
 using Core.Event;
-using Core.Localization;
 using Core.SaveLoad;
-using CsvModule;
+using Core.UI;
 using GamePlay.Bag;
 using GamePlay.MiniGame;
 using Repo.Event;
-using UnityEngine;
+using Repo.Localization;
+using Repo.UI;
+using Repo.UI.Panels;
 
 namespace GamePlay
 {
@@ -41,6 +41,8 @@ namespace GamePlay
             //注册存储
             ISaveable saveable = this;
             saveable.Register();
+            
+            UIModule.Instance.OpenPanel<MenuPanel>(PanelName.MenuPanel);
         }
 
         private void OnStartGameEvent(object obj)

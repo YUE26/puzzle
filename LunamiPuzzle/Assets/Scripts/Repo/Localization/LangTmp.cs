@@ -1,15 +1,21 @@
+using System;
 using TMPro;
 using UnityEngine;
 
-namespace Core.Localization
+namespace Repo.Localization
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    public class LangTmp: MonoBehaviour
+    public class LangTmp : MonoBehaviour
     {
         public int key;
+
         private void Awake()
         {
             Localization.LanguageUpdate += Refresh;
+        }
+
+        private void Start()
+        {
             SetText();
         }
 

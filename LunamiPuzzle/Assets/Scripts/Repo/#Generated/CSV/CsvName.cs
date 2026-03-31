@@ -9,8 +9,6 @@
 //------------------------------------------------------------------------------
 using System.Collections.Generic;
 
-namespace CsvModule
-{
     /// <summary>
     /// CSV 文件的存储地址
     /// </summary>
@@ -20,5 +18,4 @@ namespace CsvModule
         public const string ItemCfg = "ItemCfg";
         public const string LocalizationGameplayCfg = "LocalizationGameplayCfg";
         public const string LocalizationUICfg = "LocalizationUICfg";
-    }
 }

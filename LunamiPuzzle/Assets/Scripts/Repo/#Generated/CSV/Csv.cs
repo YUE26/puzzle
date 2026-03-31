@@ -10,8 +10,6 @@
 using Core.Csv;
 using System.Collections.Generic;
 
-namespace CsvModule
-{
     /// <summary>
     /// CSV 文件的存储地址
     /// </summary>
@@ -38,5 +36,4 @@ namespace CsvModule
         LocalizationUICfgStore = loader.Load<LocalizationUICfg>(CsvName.LocalizationUICfg);
      }
 #endif
-  }
 }

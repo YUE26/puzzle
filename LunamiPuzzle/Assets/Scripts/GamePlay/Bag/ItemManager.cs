@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Core;
 using Core.Event;
 using Core.SaveLoad;
-using CsvModule;
 using GamePlay.Bag.Data;
 using Repo.Event;
 using UnityEngine;
