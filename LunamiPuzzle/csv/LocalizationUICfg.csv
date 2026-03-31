@@ -1,0 +1,5 @@
+id&int,ch&string,en&string
+Menu_NewGame,,New Game
+Menu_Continue,,
+Menu_Quit,,
+Menu_AboutUs,,

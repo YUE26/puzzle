@@ -18,5 +18,7 @@ namespace CsvModule
     {
         public const string InteractionCfg = "InteractionCfg";
         public const string ItemCfg = "ItemCfg";
+        public const string LocalizationGameplayCfg = "LocalizationGameplayCfg";
+        public const string LocalizationUICfg = "LocalizationUICfg";
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Core;
 using Core.Event;
 using Core.SaveLoad;
 using GamePlay.Bag.Logic;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace GamePlay.ObjectManager
 {
-    public class ObjectManager : MonoBehaviour, ISaveable
+    public class ObjectManager : SingletonMono<ObjectManager>, ISaveable
     {
         private Dictionary<int, bool> objectDic = new Dictionary<int, bool>();
         private Dictionary<string, bool> interactionDic = new Dictionary<string, bool>();

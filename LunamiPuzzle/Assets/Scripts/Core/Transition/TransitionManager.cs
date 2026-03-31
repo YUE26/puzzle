@@ -16,7 +16,9 @@ namespace Core.Transition
 
         private bool isFade;
         private string curScene;
-        private string startScene = "H1";
+        [SceneName]
+        [SerializeField]
+        private string startScene;
         private bool canTransition;
 
         private void Start()

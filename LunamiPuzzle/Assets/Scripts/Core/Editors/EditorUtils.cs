@@ -1,4 +1,4 @@
-namespace Core.Editors
+namespace Core.Editor
 {
 ﻿public static class EditorUtils
     {

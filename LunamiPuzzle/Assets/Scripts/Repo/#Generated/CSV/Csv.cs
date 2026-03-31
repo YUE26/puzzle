@@ -20,16 +20,22 @@ namespace CsvModule
      private CsvLoader loader = new CsvLoader();
      public static Dictionary<int, InteractionCfg> InteractionCfgStore;
      public static Dictionary<int, ItemCfg> ItemCfgStore;
+     public static Dictionary<int, LocalizationGameplayCfg> LocalizationGameplayCfgStore;
+     public static Dictionary<int, LocalizationUICfg> LocalizationUICfgStore;
      public void Init()
      {
         InteractionCfgStore = loader.Load<InteractionCfg>(CsvName.InteractionCfg);
         ItemCfgStore = loader.Load<ItemCfg>(CsvName.ItemCfg);
+        LocalizationGameplayCfgStore = loader.Load<LocalizationGameplayCfg>(CsvName.LocalizationGameplayCfg);
+        LocalizationUICfgStore = loader.Load<LocalizationUICfg>(CsvName.LocalizationUICfg);
      }
 #if UNITY_EDITOR
      public void InitInEditor()
      {
         InteractionCfgStore = loader.Load<InteractionCfg>(CsvName.InteractionCfg);
         ItemCfgStore = loader.Load<ItemCfg>(CsvName.ItemCfg);
+        LocalizationGameplayCfgStore = loader.Load<LocalizationGameplayCfg>(CsvName.LocalizationGameplayCfg);
+        LocalizationUICfgStore = loader.Load<LocalizationUICfg>(CsvName.LocalizationUICfg);
      }
 #endif
   }

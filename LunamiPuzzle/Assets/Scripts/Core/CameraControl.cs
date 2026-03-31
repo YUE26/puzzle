@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class CameraControl:SingletonMono<CameraControl>
+    public class CameraControl : SingletonMono<CameraControl>
     {
         [HideInInspector]
         public Camera cameraMain;

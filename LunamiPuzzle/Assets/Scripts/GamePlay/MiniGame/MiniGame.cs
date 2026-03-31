@@ -1,4 +1,3 @@
-using Core.Editors;
 using Core.Event;
 using GamePlay.Interfaces;
 using Repo.Event;
@@ -10,7 +9,6 @@ namespace GamePlay.MiniGame
     public class MiniGame : MonoBehaviour, IMiniGame
     {
         public UnityEvent finishGame;
-
         [SceneName]
         public string gameScene;
 

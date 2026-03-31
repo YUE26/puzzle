@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Core.Csv;
+using Core.Editor;
 using Core.Logger;
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.Editors.Csv
-{
+
 public class CsvGenerator : Editor
 {
     private static readonly string filePath = "./csv";
@@ -112,7 +112,7 @@ public class CsvGenerator : Editor
         catch (Exception e)
         {
             GameLogger.Error("Read csv line error: " + path);
-            GameLogger.Error("{0}",e);
+            GameLogger.Error("{0}", e);
         }
     }
 
@@ -300,7 +300,6 @@ public class CsvGenerator : Editor
         sb.AppendLine("  }");
         sb.AppendLine("}");
         var path = System.IO.Path.Combine(pathGenerated, "Csv.cs");
-        System.IO.File.WriteAllText(path, sb.ToString(), Encoding.UTF8); 
+        System.IO.File.WriteAllText(path, sb.ToString(), Encoding.UTF8);
     }
-}
 }

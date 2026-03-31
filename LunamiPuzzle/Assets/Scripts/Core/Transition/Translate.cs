@@ -1,16 +1,19 @@
-using Core.Editors;
+
+using System;
 using UnityEngine;
 
 namespace Core.Transition
 {
-    public class Translate:MonoBehaviour
+    public class Translate : MonoBehaviour
     {
-        [SceneName]public string FromName;
-        [SceneName]public string ToName;
+        [SceneName]
+        public string FromName;
+        [SceneName]
+        public string ToName;
 
         public void TranslateScene()
         {
-            TransitionManager.Instance.Transition(FromName,ToName);
+            TransitionManager.Instance.Transition(FromName, ToName);
         }
     }
 }

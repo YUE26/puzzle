@@ -1,6 +1,7 @@
 using System;
 using Core;
 using Core.Event;
+using Core.Localization;
 using Core.SaveLoad;
 using CsvModule;
 using GamePlay.Bag;
@@ -53,7 +54,8 @@ namespace GamePlay
         {
             MiniGameController.Instance.SetMiniGameStateInScene(_gameWeek);
         }
-
+        
+        
         /// <summary>
         /// 生成一份存储数据
         /// </summary>
@@ -62,12 +64,14 @@ namespace GamePlay
         {
             SaveData.SaveData data = new SaveData.SaveData();
             data.gameWeek = _gameWeek;
+            data.langState = Localization._language;
             return data;
         }
 
         public void ReadGameData(SaveData.SaveData gameData)
         {
             this._gameWeek = gameData.gameWeek;
+            Localization._language = gameData.langState;
         }
     }
 }

@@ -20,6 +20,8 @@ namespace CsvModule
      {
              {CsvName.InteractionCfg, InteractionCfg.properties},
              {CsvName.ItemCfg, ItemCfg.properties},
+             {CsvName.LocalizationGameplayCfg, LocalizationGameplayCfg.properties},
+             {CsvName.LocalizationUICfg, LocalizationUICfg.properties},
         };
      }
 }

@@ -17,7 +17,5 @@ public class InteractionCfg:CsvBase
    public static readonly string[,] properties = 
    {
        {"1000","0","0",},
-       {"0","0","0",},
-       {"0","0","0",},
    };
 }
