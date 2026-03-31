@@ -46,7 +46,7 @@ namespace Core.Transition
         private void OnStartNewGameEvent(object obj)
         {
             if (obj is not int) return;
-            StartCoroutine(TransitionScene("Menu", startScene));
+            StartCoroutine(TransitionScene("Main", startScene));
         }
 
         private void OnUpdateGameStateEvent(object obj)

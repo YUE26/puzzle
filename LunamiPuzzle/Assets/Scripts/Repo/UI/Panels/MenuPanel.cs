@@ -12,6 +12,7 @@ namespace Repo.UI.Panels
         
         public void QuitGame()
         {
+            UIModule.Instance.CloseUI();
             SaveLoadManager.Instance.Serialize();
             Application.Quit();
         }
@@ -22,6 +23,7 @@ namespace Repo.UI.Panels
         public void Continue()
         {
             SaveLoadManager.Instance.AntiSerializeObject();
+            UIModule.Instance.CloseUI();
         }
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace Repo.UI.Panels
         public void StartGameWeek(int gameWeek)
         {
             EventModule.Dispatch(EventName.EvtStartGameEvent, gameWeek);
+            UIModule.Instance.CloseUI();
         }
     }
 }

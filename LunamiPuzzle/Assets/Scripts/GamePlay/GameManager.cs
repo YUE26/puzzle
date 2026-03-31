@@ -5,7 +5,6 @@ using Core.UI;
 using GamePlay.Bag;
 using GamePlay.MiniGame;
 using Repo.Event;
-using Repo.Localization;
 using Repo.UI;
 using Repo.UI.Panels;
 

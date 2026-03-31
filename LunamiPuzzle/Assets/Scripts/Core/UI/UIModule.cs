@@ -258,7 +258,7 @@ namespace Core.UI
                 return PanelName.Null;
             }
 
-            var ui = UIStack.Pop();
+            var ui = UIStack.Peek();
             return ui.panelName;
         }
 

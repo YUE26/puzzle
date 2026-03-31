@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Repo.Localization;
+using GamePlay;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class LangTmpEditor : Editor
     private SerializedProperty keyProperty;
     private string[] optionLabels;
     private int[] optionValues;
+    private string searchText = string.Empty;
 
     private void OnEnable()
     {
@@ -27,9 +28,21 @@ public class LangTmpEditor : Editor
         }
         else
         {
+            searchText = EditorGUILayout.TextField("Search", searchText);
+
+            BuildFilteredOptions(searchText, out string[] filteredLabels, out int[] filteredValues);
+
             int currentValue = keyProperty.intValue;
-            int selectedValue = EditorGUILayout.IntPopup("key", currentValue, optionLabels, optionValues);
-            keyProperty.intValue = selectedValue;
+            if (filteredValues.Length == 0)
+            {
+                EditorGUILayout.HelpBox("No LocalizationUICfg matches current search.", MessageType.Info);
+                EditorGUILayout.PropertyField(keyProperty);
+            }
+            else
+            {
+                int selectedValue = EditorGUILayout.IntPopup("key", currentValue, filteredLabels, filteredValues);
+                keyProperty.intValue = selectedValue;
+            }
 
             if (GUILayout.Button("Refresh LocalizationUICfg"))
             {
@@ -76,5 +89,38 @@ public class LangTmpEditor : Editor
 
         var csv = new Csv();
         csv.InitInEditor();
+    }
+
+    private void BuildFilteredOptions(string keyword, out string[] filteredLabels, out int[] filteredValues)
+    {
+        if (optionValues == null || optionLabels == null || optionValues.Length == 0)
+        {
+            filteredLabels = new string[0];
+            filteredValues = new int[0];
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(keyword))
+        {
+            filteredLabels = optionLabels;
+            filteredValues = optionValues;
+            return;
+        }
+
+        string lowerKeyword = keyword.Trim().ToLowerInvariant();
+        var labels = new List<string>();
+        var values = new List<int>();
+
+        for (int i = 0; i < optionValues.Length; i++)
+        {
+            if (optionLabels[i].ToLowerInvariant().Contains(lowerKeyword))
+            {
+                labels.Add(optionLabels[i]);
+                values.Add(optionValues[i]);
+            }
+        }
+
+        filteredLabels = labels.ToArray();
+        filteredValues = values.ToArray();
     }
 }

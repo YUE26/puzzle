@@ -1,6 +1,6 @@
 using System;
 
-namespace Repo.Localization
+namespace GamePlay
 {
     public enum LangState
     {

@@ -1,8 +1,7 @@
-using System;
 using TMPro;
 using UnityEngine;
 
-namespace Repo.Localization
+namespace GamePlay
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class LangTmp : MonoBehaviour

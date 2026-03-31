@@ -48,9 +48,10 @@
     <Analyzer Include="/home/russell/Unity/Hub/Editor/6000.0.67f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/GamePlay/Editor/Localization/Editor/LangTmpEditor.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
-    <Compile Include="Assets/Scripts/Repo/Editor/Localization/Editor/LangTmpEditor.cs" />
     <Compile Include="Assets/Scripts/Core/Editors/CustomAttributes/Editor/SceneNameDrawer.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/Editor/ItemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
