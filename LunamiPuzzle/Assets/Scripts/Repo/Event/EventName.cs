@@ -1,4 +1,4 @@
-namespace Core.Event
+namespace Repo.Event
 {
     public enum EventName
     {

@@ -1,12 +1,5 @@
-namespace Core.Bag
+namespace GamePlay.Bag
 {
-    public enum ItemEnums
-    {
-        Null=0,
-        Key=1,
-        Ticket=2,
-    }
-
     public enum GameState
     {
         Pause,

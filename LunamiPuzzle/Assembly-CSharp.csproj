@@ -48,27 +48,47 @@
     <Analyzer Include="/home/russell/Unity/Hub/Editor/6000.0.67f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Repo/Event/EventName.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/Data/ItemData.cs" />
     <Compile Include="Assets/Scripts/Core/UI/UIModule.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/UI/PanelPath.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/TransitionData.cs" />
-    <Compile Include="Assets/Scripts/Core/Event/EventName.cs" />
+    <Compile Include="Assets/Scripts/Core/Csv/CsvBase.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/MiniGame/IMiniGame.cs" />
     <Compile Include="Assets/Scripts/Core/SaveLoad/ISaveable.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/SaveData/ItemSaveData.cs" />
     <Compile Include="Assets/Scripts/Core/UI/CanvasControl.cs" />
     <Compile Include="Assets/Scripts/Core/Cursor/SmartCursor.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/SaveData/ObjectData.cs" />
     <Compile Include="Assets/Scripts/Core/Input/PlayerAction.cs" />
     <Compile Include="Assets/Scripts/Core/Interfaces/ICore.cs" />
-    <Compile Include="Assets/Scripts/Core/UI/PanelPath.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/Logic/Item.cs" />
+    <Compile Include="Assets/Scripts/Repo/#Generated/CSV/CsvStore.cs" />
+    <Compile Include="Assets/Scripts/Core/Editors/CustomAttributes/SceneNameAttribute.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/SaveData/GameManagerData.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/Data/ItemInteract.cs" />
+    <Compile Include="Assets/Scripts/Core/Csv/CsvLoader.cs" />
+    <Compile Include="Assets/Scripts/Repo/Event/EventData.cs" />
+    <Compile Include="Assets/Scripts/Core/Editors/EditorUtils.cs" />
     <Compile Include="Assets/Scripts/Core/Interfaces/IEvent.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/ItemManager.cs" />
+    <Compile Include="Assets/Scripts/Repo/#Generated/CSV/Csv.cs" />
     <Compile Include="Assets/Scripts/Core/UI/UIBase.cs" />
     <Compile Include="Assets/Scripts/Core/Cursor/SmartCursorConfig.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
+    <Compile Include="Assets/Scripts/Core/Editors/Csv/CsvGenerator.cs" />
     <Compile Include="Assets/Scripts/Core/Input/InputReader.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Bag/Utils.cs" />
     <Compile Include="Assets/Scripts/Core/Transition/Translate.cs" />
     <Compile Include="Assets/Scripts/Core/Logger/GameLogger.cs" />
-    <Compile Include="Assets/Scripts/Core/Event/EventData.cs" />
+    <Compile Include="Assets/Scripts/Repo/#Generated/CSV/CsvName.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/GameManager.cs" />
     <Compile Include="Assets/Scripts/Core/SingletonMono.cs" />
-    <Compile Include="Assets/Scripts/Core/Bag/Data/ItemData.cs" />
-    <Compile Include="Assets/Scripts/Core/Bag/Utils.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/MiniGame/MiniGame.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/MiniGame/MiniGameController.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/SaveData/MiniGameData.cs" />
     <Compile Include="Assets/Scripts/Core/Input/InputModule.cs" />
+    <Compile Include="Assets/Scripts/Repo/#Generated/CSV/ItemCfg.cs" />
     <Compile Include="Assets/Scripts/Core/Transition/TransitionManager.cs" />
     <Compile Include="Assets/Scripts/Core/Interfaces/IInput.cs" />
     <Compile Include="Assets/Scripts/Core/Singleton.cs" />
@@ -78,7 +98,6 @@
     <Compile Include="Assets/Scripts/Core/SaveLoad/SaveLoadManager.cs" />
     <Compile Include="Assets/Scripts/Core/ResourceManager.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/SaveData.cs" />
-    <Compile Include="Assets\Scripts\Core\Editors\CustomAttributes\SceneNameAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -565,16 +584,16 @@
       <HintPath>Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb/Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1265,6 +1284,8 @@
       <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

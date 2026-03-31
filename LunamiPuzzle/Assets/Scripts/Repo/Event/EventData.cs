@@ -1,6 +1,6 @@
-using Core.Bag.Data;
+using GamePlay.Bag.Data;
 
-namespace Core.Event
+namespace Repo.Event
 {
     public class EvtItemUpdateData
     {
