@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Core;
 using Core.Event;
 using Core.SaveLoad;
+using GamePlay.Bag.Data;
 using GamePlay.Bag.Logic;
 using Repo.Event;
 using UnityEngine;
@@ -87,10 +88,10 @@ namespace GamePlay.ObjectManager
 
         private void OnUpdateItemClick(object obj)
         {
-            if (obj is not EvtItemUpdateData iData) return;
-            if (iData.itemDetail != null && objectDic.ContainsKey(iData.itemDetail.itemId))
+            if (obj is not int itemId) return;
+            if (objectDic.ContainsKey(itemId))
             {
-                objectDic[iData.itemDetail.itemId] = false;
+                objectDic[itemId] = false;
             }
         }
 

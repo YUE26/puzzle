@@ -8,8 +8,6 @@ namespace Repo.Items
         protected override void OnInteractClick()
         {
             base.OnInteractClick();
-            ItemManager.Instance.AddItemToBag(id);
-            gameObject.SetActive(false);
         }
     }
 }

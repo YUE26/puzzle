@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Core.Event;
 using GamePlay.Bag.Data;
 using GamePlay.Interfaces;
+using Repo.Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -44,6 +46,9 @@ namespace GamePlay.Bag.Logic
         
         public void ItemClick()
         {
+            gameObject.SetActive(false);
+            ItemManager.Instance.AddItemToBag(id);
+            EventModule.Dispatch(EventName.EvtUpdateItem, id);
             OnInteractClick();
         }
 

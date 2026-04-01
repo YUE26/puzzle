@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FromName: C1S2
-  ToName: C1S3
+  ToName: C1S1
 --- !u!61 &1585991741
 BoxCollider2D:
   m_ObjectHideFlags: 0
