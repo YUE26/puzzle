@@ -92,7 +92,23 @@ namespace GamePlay.Bag
             if (Csv.ItemCfgStore.TryGetValue(itemId, out var itemCfg) == false) return;
             if (IsBagContain(itemId) == false)
             {
-                bag.Add(new ItemDetail() { itemId = itemId, itemSprite = ResourceManager<Sprite>.Load(itemCfg.sprite), countable = (Countable)itemCfg.countable, count = 1 });
+                var newDetail = new ItemDetail()
+                {
+                    itemId = itemId,
+                    itemSprite = ResourceManager<Sprite>.Load(itemCfg.sprite),
+                    countable = (Countable)itemCfg.countable,
+                    count = 1
+                };
+                var newIndex = GetFirstEmptySlotInBag();
+                if (newIndex == -1)
+                {
+                    bag.Add(newDetail);
+                }
+                else
+                {
+                    bag[newIndex] = newDetail;
+                }
+
                 Capacity = bag.Count;
             }
             else
@@ -128,17 +144,18 @@ namespace GamePlay.Bag
                     detail.count--;
                     if (detail.count <= 0)
                     {
-                        bag.RemoveAt(i);
+                        bag[i] = null;
                     }
                 }
                 else
                 {
-                    bag.RemoveAt(i);
+                    bag[i] = null;
                 }
 
                 break;
             }
 
+            TrimBagTail();
             Capacity = bag.Count;
             EventModule.Dispatch(EventName.EvtRefreshBag);
         }
@@ -170,8 +187,18 @@ namespace GamePlay.Bag
         public void ReadGameData(SaveData.SaveData gameData)
         {
             bag = gameData.bag ?? new List<ItemDetail>();
+            TrimBagTail();
             Capacity = gameData.Capacity > 0 ? gameData.Capacity : bag.Count;
             itemInHand = null;
+        }
+
+        private void TrimBagTail()
+        {
+            for (int i = bag.Count - 1; i >= 0; i--)
+            {
+                if (bag[i] != null) break;
+                bag.RemoveAt(i);
+            }
         }
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/GamePlay/Editor/Localization/Editor/LangTmpEditor.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/Interaction/Editor/InteractionEditor.cs" />
     <Compile Include="Assets/Scripts/Core/Editors/CustomAttributes/Editor/SceneNameDrawer.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Bag/Editor/ItemEditor.cs" />
   </ItemGroup>

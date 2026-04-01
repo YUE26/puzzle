@@ -18,17 +18,19 @@ namespace Repo.UI.Panels.Bag
 
         public void SetItem(ItemDetail itemDetail)
         {
-            IsEmpty = false;
             isClick = false;
             currentDetail = itemDetail;
             if (currentDetail == null)
             {
+                IsEmpty = true;
                 item.gameObject.SetActive(false);
             }
             else
             {
+                IsEmpty = false;
                 item.gameObject.SetActive(true);
                 item.sprite = currentDetail.itemSprite;
+                item.transform.localPosition = Vector3.zero;
                 item.SetNativeSize();
             }
         }
@@ -47,6 +49,7 @@ namespace Repo.UI.Panels.Bag
             {
                 ItemManager.Instance.ReleaseHand();
                 isClick = false;
+                item.color = Color.white;
                 return;
             }
 
@@ -54,12 +57,14 @@ namespace Repo.UI.Panels.Bag
             if (ReferenceEquals(inHand, currentDetail))
             {
                 isClick = false;
+                item.color = Color.white;
                 ItemManager.Instance.ReleaseHand();
             }
             else
             {
                 isClick = true;
                 ItemManager.Instance.SelectItemInHand(currentDetail);
+                item.color = Color.black;
             }
         }
 

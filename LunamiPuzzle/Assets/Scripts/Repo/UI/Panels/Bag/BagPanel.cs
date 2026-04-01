@@ -42,8 +42,13 @@ namespace Repo.UI.Panels
                     go.SetActive(false);
                     var sc = go.GetComponent<BagItem>();
                     return sc;
-                }, onGet: sc => sc.gameObject.SetActive(true),
-                onRelease: sc => sc.OnRelease());
+                }, onGet: sc =>
+                {
+                    sc.gameObject.SetActive(true);
+                    sc.transform.SetAsLastSibling();
+                },
+                onRelease: sc => sc.OnRelease(),
+                initialCapacity: 0);
             
             Init();
             RefreshBag(null);

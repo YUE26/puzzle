@@ -13,9 +13,11 @@ public class InteractionCfg:CsvBase
 {
     public int id { get; set; }
     public int target { get; set; }
+    public int result { get; set; }
     public string sprite { get; set; }
+    public string comment { get; set; }
    public static readonly string[,] properties = 
    {
-       {"1000","0","0",},
+       {"1000","1000","1001","0","mailbox",},
    };
 }

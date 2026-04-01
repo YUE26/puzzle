@@ -1,2 +1,2 @@
-id&int,target&int,sprite&string
-1000,,
+id&int,target&int,result&int,sprite&string,comment&string
+1000,1000,1001,,mailbox

@@ -96,9 +96,11 @@
     <Compile Include="Assets/Scripts/GamePlay/GameManager.cs" />
     <Compile Include="Assets/Scripts/Core/SingletonMono.cs" />
     <Compile Include="Assets/Scripts/GamePlay/MiniGame/MiniGame.cs" />
+    <Compile Include="Assets/Scripts/Core/UI/TransparentGraphic.cs" />
     <Compile Include="Assets/Scripts/GamePlay/MiniGame/MiniGameController.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/MiniGameData.cs" />
     <Compile Include="Assets/Scripts/Core/Input/InputModule.cs" />
+    <Compile Include="Assets/Scripts/Repo/Interacts/MailBox.cs" />
     <Compile Include="Assets/Scripts/Repo/#Generated/CSV/ItemCfg.cs" />
     <Compile Include="Assets/Scripts/Core/Transition/TransitionManager.cs" />
     <Compile Include="Assets/Scripts/Core/Interfaces/IInput.cs" />
