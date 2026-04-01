@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using GamePlay.Bag.Data;
 
 namespace GamePlay.SaveData
 {
-    public partial class SaveData 
+    public partial class SaveData
     {
-        public List<int> bag;
+        public List<ItemDetail> bag = new List<ItemDetail>();
+        public int Capacity;
     }
 }

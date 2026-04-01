@@ -6,8 +6,9 @@ namespace Repo.UI
     {
         public static readonly Dictionary<PanelName, string> path = new Dictionary<PanelName, string>()
         {
-            { PanelName.MenuPanel , "uiPrefab/MenuPanel" },
+            { PanelName.MenuPanel , "uiPrefab/Menu/MenuPanel" },
             { PanelName.HudPanel , "uiPrefab/HudPanel" },
+            { PanelName.BagPanel , "uiPrefab/Bag/BagPanel" },
         };
     }
 
@@ -16,5 +17,6 @@ namespace Repo.UI
         Null,
         MenuPanel,
         HudPanel,
+        BagPanel,
     }
 }

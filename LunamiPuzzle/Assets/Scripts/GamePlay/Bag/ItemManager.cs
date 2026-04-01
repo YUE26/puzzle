@@ -15,11 +15,13 @@ namespace GamePlay.Bag
     {
         public ItemDetail itemInHand { get; private set; } = null;
 
-        private List<int> bag = new List<int>();
+
+        private List<ItemDetail> bag = new List<ItemDetail>();
+        public int Capacity { get; private set; } = 0;
 
         private void OnEnable()
         {
-            EventModule.AddListener(EventName.EvtItemUse, DeleteItemFromBag);
+            EventModule.AddListener(EventName.EvtItemUse, UseItem);
             EventModule.AddListener(EventName.EvtAfterLoadScene, OnAfterLoadScene);
             EventModule.AddListener(EventName.EvtStartGameEvent, OnStartGameEvent);
         }
@@ -32,7 +34,7 @@ namespace GamePlay.Bag
 
         private void OnDisable()
         {
-            EventModule.RemoveListener(EventName.EvtItemUse, DeleteItemFromBag);
+            EventModule.RemoveListener(EventName.EvtItemUse, UseItem);
             EventModule.RemoveListener(EventName.EvtAfterLoadScene, OnAfterLoadScene);
             EventModule.RemoveListener(EventName.EvtStartGameEvent, OnStartGameEvent);
         }
@@ -40,21 +42,45 @@ namespace GamePlay.Bag
         private void OnStartGameEvent(object obj)
         {
             bag.Clear();
+            Capacity = 0;
+            itemInHand = null;
+            EventModule.Dispatch(EventName.EvtRefreshBag);
         }
 
         private void OnAfterLoadScene(object obj)
         {
-            if (bag.Count == 0)
+            EventModule.Dispatch(EventName.EvtRefreshBag);
+        }
+
+        private bool IsBagContain(int itemId)
+        {
+            if (bag == null || bag.Count == 0) return false;
+            foreach (var itemDetail in bag)
             {
-                EventModule.Dispatch(EventName.EvtUpdateItem, new EvtItemUpdateData() { itemDetail = null, index = -1 });
-            }
-            else
-            {
-                for (int i = 0, count = bag.Count; i < count; i++)
+                if (itemDetail == null) continue;
+                if (itemDetail.itemId == itemId)
                 {
-                    EventModule.Dispatch(EventName.EvtUpdateItem, new EvtItemUpdateData() { itemDetail = SelectItemFromIndex(i), index = i });
+                    if (itemDetail.countable == Countable.UnCountable || itemDetail.count != 0)
+                    {
+                        return true;
+                    }
                 }
             }
+
+            return false;
+        }
+
+        private int GetFirstEmptySlotInBag()
+        {
+            for (int i = 0; i < bag.Count; i++)
+            {
+                if (bag[i] == null)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         /// <summary>
@@ -63,40 +89,63 @@ namespace GamePlay.Bag
         /// <param name="itemId"></param>
         public void AddItemToBag(int itemId)
         {
-            if (bag.Contains(itemId) == false)
+            if (Csv.ItemCfgStore.TryGetValue(itemId, out var itemCfg) == false) return;
+            if (IsBagContain(itemId) == false)
             {
-                bag.Add(itemId);
+                bag.Add(new ItemDetail() { itemId = itemId, itemSprite = ResourceManager<Sprite>.Load(itemCfg.sprite), countable = (Countable)itemCfg.countable, count = 1 });
+                Capacity = bag.Count;
+            }
+            else
+            {
+                foreach (var itemDetail in bag)
+                {
+                    if (itemDetail == null) continue;
+                    if (itemDetail.itemId != itemId) continue;
+                    if (itemDetail.countable == Countable.Countable)
+                    {
+                        itemDetail.count++;
+                    }
+                }
             }
 
-            if (Csv.ItemCfgStore.TryGetValue(itemId, out ItemCfg cfg))
-            {
-                var itemDetail = new ItemDetail() { itemId = itemId, itemSprite = ResourceManager<Sprite>.Load(cfg.sprite) };
-                EventModule.Dispatch(EventName.EvtUpdateItem, new EvtItemUpdateData() { itemDetail = itemDetail, index = bag.Count - 1 });
-            }
+            EventModule.Dispatch(EventName.EvtRefreshBag);
         }
 
         /// <summary>
         /// 使用物品后删除
         /// </summary>
         /// <param name="itemName"></param>
-        private void DeleteItemFromBag(object obj)
+        private void UseItem(object obj)
         {
-            if (obj is not int itemName) return;
-            bag.Remove(itemName);
-            //Todo:删除单一物品
-            EventModule.Dispatch(EventName.EvtUpdateItem, new EvtItemUpdateData() { itemDetail = null, index = -1 });
+            if (obj is not int itemId) return;
+            for (int i = 0; i < bag.Count; i++)
+            {
+                var detail = bag[i];
+                if (detail == null || detail.itemId != itemId) continue;
+
+                if (detail.countable == Countable.Countable)
+                {
+                    detail.count--;
+                    if (detail.count <= 0)
+                    {
+                        bag.RemoveAt(i);
+                    }
+                }
+                else
+                {
+                    bag.RemoveAt(i);
+                }
+
+                break;
+            }
+
+            Capacity = bag.Count;
+            EventModule.Dispatch(EventName.EvtRefreshBag);
         }
 
-        /// <summary>
-        /// todo: select item from index
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public ItemDetail SelectItemFromIndex(int index)
+        public void SelectItemInHand(ItemDetail detail)
         {
-            // itemInHand = itemData.GetItemDetail(bag[index]);
-            // return itemData.GetItemDetail(bag[index]);
-            return null;
+            itemInHand = detail;
         }
 
         public void ReleaseHand()
@@ -104,17 +153,25 @@ namespace GamePlay.Bag
             itemInHand = null;
         }
 
+        public List<ItemDetail> GetBag()
+        {
+            return bag;
+        }
+
 
         public SaveData.SaveData GenerateSaveData()
         {
             SaveData.SaveData data = new SaveData.SaveData();
             data.bag = bag;
+            data.Capacity = Capacity;
             return data;
         }
 
         public void ReadGameData(SaveData.SaveData gameData)
         {
-            bag = gameData.bag;
+            bag = gameData.bag ?? new List<ItemDetail>();
+            Capacity = gameData.Capacity > 0 ? gameData.Capacity : bag.Count;
+            itemInHand = null;
         }
     }
 }

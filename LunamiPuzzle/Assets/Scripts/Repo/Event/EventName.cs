@@ -51,5 +51,10 @@ namespace Repo.Event
         /// start game week
         /// </summary>
         EvtStartGameEvent,
+        
+        /// <summary>
+        /// refresh bag ui
+        /// </summary>
+        EvtRefreshBag,
     }
 }

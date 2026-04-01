@@ -16,10 +16,11 @@ public class ItemCfg:CsvBase
     public int result { get; set; }
     public string name { get; set; }
     public string sprite { get; set; }
+    public int countable { get; set; }
     public string comment { get; set; }
    public static readonly string[,] properties = 
    {
-       {"1000","0","0","0","0","key",},
-       {"1001","0","0","0","0","ticket",},
+       {"1000","0","0","0","sprites/items/key","0","key",},
+       {"1001","0","0","0","sprites/items/mail_prop","0","ticket",},
    };
 }

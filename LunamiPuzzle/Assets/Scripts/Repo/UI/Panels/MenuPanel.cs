@@ -23,7 +23,7 @@ namespace Repo.UI.Panels
         public void Continue()
         {
             SaveLoadManager.Instance.AntiSerializeObject();
-            UIModule.Instance.CloseUI();
+            UIModule.Instance.OpenPanel<BagPanel>(PanelName.BagPanel);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Repo.UI.Panels
         public void StartGameWeek(int gameWeek)
         {
             EventModule.Dispatch(EventName.EvtStartGameEvent, gameWeek);
-            UIModule.Instance.CloseUI();
+            UIModule.Instance.OpenPanel<BagPanel>(PanelName.BagPanel);
         }
     }
 }

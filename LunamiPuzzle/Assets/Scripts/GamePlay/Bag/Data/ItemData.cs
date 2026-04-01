@@ -8,5 +8,13 @@ namespace GamePlay.Bag.Data
     {
         public int itemId;
         public Sprite itemSprite;
+        public int count;
+        public Countable countable;
+    }
+
+    public enum Countable
+    {
+        UnCountable,
+        Countable
     }
 }
