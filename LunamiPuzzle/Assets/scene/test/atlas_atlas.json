@@ -1,0 +1,100 @@
+{
+  "sourceImage": "test.xcf",
+  "atlasFile": "atlas_atlas.png",
+  "atlasWidth": 1024,
+  "atlasHeight": 1024,
+  "atlasContentWidth": 1000,
+  "atlasContentHeight": 996,
+  "layers": [
+    {
+      "name": "steam-icon-14883.png",
+      "sourceRelativePath": "steam-icon-14883.png",
+      "parentPath": "",
+      "sourceX": 43,
+      "sourceY": 36,
+      "sourceWidth": 569,
+      "sourceHeight": 569,
+      "atlasX": 0,
+      "atlasY": 0,
+      "atlasWidth": 569,
+      "atlasHeight": 569,
+      "uvX": 0.0,
+      "uvY": 0.0,
+      "uvWidth": 0.5556640625,
+      "uvHeight": 0.5556640625
+    },
+    {
+      "name": "output.png",
+      "sourceRelativePath": "output.png",
+      "parentPath": "",
+      "sourceX": 881,
+      "sourceY": 499,
+      "sourceWidth": 158,
+      "sourceHeight": 101,
+      "atlasX": 259,
+      "atlasY": 830,
+      "atlasWidth": 158,
+      "atlasHeight": 101,
+      "uvX": 0.2529296875,
+      "uvY": 0.810546875,
+      "uvWidth": 0.154296875,
+      "uvHeight": 0.0986328125
+    },
+    {
+      "name": "icon256.png",
+      "sourceRelativePath": "icon256.png",
+      "parentPath": "",
+      "sourceX": 1071,
+      "sourceY": 171,
+      "sourceWidth": 257,
+      "sourceHeight": 166,
+      "atlasX": 0,
+      "atlasY": 830,
+      "atlasWidth": 257,
+      "atlasHeight": 166,
+      "uvX": 0.0,
+      "uvY": 0.810546875,
+      "uvWidth": 0.2509765625,
+      "uvHeight": 0.162109375
+    },
+    {
+      "name": "library_hero_EN.png",
+      "sourceRelativePath": "library_hero_EN.png",
+      "parentPath": "",
+      "sourceX": 520,
+      "sourceY": 685,
+      "sourceWidth": 1000,
+      "sourceHeight": 257,
+      "atlasX": 0,
+      "atlasY": 571,
+      "atlasWidth": 1000,
+      "atlasHeight": 257,
+      "uvX": 0.0,
+      "uvY": 0.5576171875,
+      "uvWidth": 0.9765625,
+      "uvHeight": 0.2509765625
+    }
+  ],
+  "hierarchy": {
+    "name": "root",
+    "type": "group",
+    "children": [
+      {
+        "name": "steam-icon-14883.png",
+        "type": "layer"
+      },
+      {
+        "name": "output.png",
+        "type": "layer"
+      },
+      {
+        "name": "icon256.png",
+        "type": "layer"
+      },
+      {
+        "name": "library_hero_EN.png",
+        "type": "layer"
+      }
+    ]
+  }
+}
