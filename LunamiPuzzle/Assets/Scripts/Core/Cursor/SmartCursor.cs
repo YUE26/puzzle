@@ -70,25 +70,13 @@ namespace Core.Cursor
 
         private void CursorDetect()
         {
-            var topPanel = UIModule.Instance.GetTopUI();
-            if (topPanel != PanelName.HudPanel)
-            {
-                SetCursorState(CursorState.Normal);
-                return;
-            }
-
             Vector2 mousePos = CameraControl.Instance.cameraMain.ScreenToWorldPoint(InputModule.Instance.MousePosition);
             RaycastHit2D interactHit =
                 Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, 1 << LayerMask.NameToLayer("Interact"));
-            RaycastHit2D npcHit =
-                Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, 1 << LayerMask.NameToLayer("Npc"));
+          
             if (interactHit.collider != null)
             {
                 SetCursorState(CursorState.Interact);
-            }
-            else if (npcHit.collider != null)
-            {
-                SetCursorState(CursorState.Talk);
             }
             else
             {

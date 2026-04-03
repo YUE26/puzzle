@@ -48,6 +48,7 @@
     <Analyzer Include="/home/russell/Unity/Hub/Editor/6000.0.67f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Repo/UI/Panels/Menu/MenuPanel.cs" />
     <Compile Include="Assets/Scripts/Repo/Event/EventName.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Bag/Data/ItemData.cs" />
     <Compile Include="Assets/Scripts/Repo/#Generated/CSV/InteractionCfg.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="Assets/Scripts/GamePlay/Interfaces/IMiniGame.cs" />
     <Compile Include="Assets/Scripts/Repo/UI/PanelPath.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/ItemSaveData.cs" />
-    <Compile Include="Assets/Scripts/Repo/UI/Panels/MenuPanel.cs" />
     <Compile Include="Assets/Scripts/Core/UI/CanvasControl.cs" />
     <Compile Include="Assets/Scripts/Core/Cursor/SmartCursor.cs" />
     <Compile Include="Assets/Scripts/GamePlay/SaveData/ObjectData.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="Assets/Scripts/Core/Transition/Translate.cs" />
     <Compile Include="Assets/Scripts/Core/Logger/GameLogger.cs" />
     <Compile Include="Assets/Scripts/Repo/#Generated/CSV/CsvName.cs" />
+    <Compile Include="Assets/Scripts/Repo/UI/Panels/Setting/SettingPanel.cs" />
     <Compile Include="Assets/Scripts/GamePlay/GameManager.cs" />
     <Compile Include="Assets/Scripts/Core/SingletonMono.cs" />
     <Compile Include="Assets/Scripts/GamePlay/MiniGame/MiniGame.cs" />
@@ -1329,6 +1330,8 @@
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

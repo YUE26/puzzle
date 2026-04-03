@@ -24,6 +24,7 @@ namespace Repo.UI.Panels
         {
             SaveLoadManager.Instance.AntiSerializeObject();
             UIModule.Instance.OpenPanel<BagPanel>(PanelName.BagPanel);
+            UIModule.Instance.PopPanel<SettingPanel>(PanelName.SettingPanel);
         }
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace Repo.UI.Panels
         {
             EventModule.Dispatch(EventName.EvtStartGameEvent, gameWeek);
             UIModule.Instance.OpenPanel<BagPanel>(PanelName.BagPanel);
+            UIModule.Instance.PopPanel<SettingPanel>(PanelName.SettingPanel);
         }
     }
 }
