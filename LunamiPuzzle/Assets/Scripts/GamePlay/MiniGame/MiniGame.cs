@@ -36,7 +36,7 @@ namespace GamePlay.MiniGame
 
         public void ChooseGameData(int week)
         {
-            OnChooseGameData();
+            OnChooseGameData(week);
         }
 
         public void CheckGameStateEvent(object obj)
@@ -64,7 +64,7 @@ namespace GamePlay.MiniGame
         {
         }
 
-        protected virtual void OnChooseGameData()
+        protected virtual void OnChooseGameData(int week)
         {
         }
 
