@@ -11,7 +11,7 @@ namespace GamePlay
     public static class Localization
     {
         public static Action LanguageUpdate;
-        public static LangState _language = LangState.ch;
+        public static LangState _language = LangState.en;
         
         public static void SwitchToEnglish()
         {

@@ -4,7 +4,6 @@ using Core.Event;
 using Core.SaveLoad;
 using GamePlay.Bag.Data;
 using Repo.Event;
-using UnityEngine;
 
 namespace GamePlay.Bag
 {
@@ -95,7 +94,7 @@ namespace GamePlay.Bag
                 var newDetail = new ItemDetail()
                 {
                     itemId = itemId,
-                    itemSprite = ResourceManager<Sprite>.Load(itemCfg.sprite),
+                    itemSpritePath = itemCfg.sprite,
                     countable = (Countable)itemCfg.countable,
                     count = 1
                 };

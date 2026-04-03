@@ -1,3 +1,4 @@
+using Core;
 using GamePlay.Bag;
 using GamePlay.Bag.Data;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace Repo.UI.Panels.Bag
             {
                 IsEmpty = false;
                 item.gameObject.SetActive(true);
-                item.sprite = currentDetail.itemSprite;
+                item.sprite = ResourceManager<Sprite>.Load(currentDetail.itemSpritePath);
                 item.transform.localPosition = Vector3.zero;
                 item.SetNativeSize();
             }

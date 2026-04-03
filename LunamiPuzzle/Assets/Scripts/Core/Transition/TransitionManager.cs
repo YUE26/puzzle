@@ -107,8 +107,7 @@ namespace Core.Transition
         public void ReadGameData(SaveData gameData)
         {
             curScene = gameData.curScene;
-
-            Transition("Menu", curScene);
+            Transition("Main", curScene);
         }
     }
 }

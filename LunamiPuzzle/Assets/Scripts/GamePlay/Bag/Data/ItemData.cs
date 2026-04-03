@@ -7,7 +7,7 @@ namespace GamePlay.Bag.Data
     public class ItemDetail
     {
         public int itemId;
-        public Sprite itemSprite;
+        public string itemSpritePath;
         public int count;
         public Countable countable;
     }
